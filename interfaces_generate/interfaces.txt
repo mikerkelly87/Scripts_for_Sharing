@@ -1,0 +1,96 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto p2p1
+iface p2p1 inet manual
+bond-master bond0
+
+auto em1
+iface em1 inet manual
+bond-master bond0
+
+# Primary Network Interface
+auto bond0
+iface bond0 inet manual
+  bond-miimon 100
+  bond-mode 4
+  bond-lacp-rate 1
+  bond-xmit-hash-policy layer3+4
+  slaves none
+
+# Host VLAN Tagged Interface
+auto bond0.404
+iface bond0.404 inet manual
+
+# Container VLAN Tagged Interface
+auto bond0.400
+iface bond0.400 inet manual
+
+# Storage VLAN Tagged Interface
+auto bond0.402
+iface bond0.402 inet manual
+
+# Host Bridge
+auto br-host
+iface br-host inet static
+address br_host
+netmask 255.255.248.0
+gateway 10.239.24.1
+dns-nameservers 8.8.8.8
+bridge_ports bond0.404
+bridge_stp off
+bridge_waitport 0
+bridge_fd 0
+offload-sg on
+
+# Container Bridge
+auto br-mgmt
+iface br-mgmt inet static
+address br_mgmt
+netmask 255.255.248.0
+bridge_ports bond0.400
+bridge_stp off
+bridge_waitport 0
+bridge_fd 0
+offload-sg on
+
+# Storage Bridge
+auto br-storage
+iface br-storage inet static
+address br_storage
+netmask 255.255.254.0
+bridge_ports bond0.402
+bridge_stp off
+bridge_waitport 0
+bridge_fd 0
+offload-sg on
+
+# VLAN Bridge
+auto br-vlan
+iface br-vlan inet manual
+bridge_ports bond0
+bridge_stp off
+bridge_waitport 0
+bridge_fd 0
+offload-sg on
+
+# This is a dummy interface for the VXLAN Bridge
+auto dummy0
+
+# VXLAN Bridge - This is a dummy bridge
+auto br-vxlan
+iface br-vxlan inet static
+address br_vxlan
+netmask 255.255.248.0
+bridge_ports dummy0
+#bridge_stp off
+#bridge_waitport 0
+#bridge_fd 0
+#offload-sg off
+
+source /etc/network/interfaces.d/*.cfg
