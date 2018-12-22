@@ -10,17 +10,17 @@ with open("addresses.yml", 'r') as ymlfile:
 for i in addresses:
 	print(i)
 	print("br-mgmt")
-	print(addresses[i]['br_mgmt'])
+	print(addresses[i]['br_mgmt_'])
 	print("br-storage")
-	print(addresses[i]['br_storage'])
+	print(addresses[i]['br_storage_'])
 	print("br-storageprod")
-	print(addresses[i]['br_storageprod'])
+	print(addresses[i]['br_storageprod_'])
 	print("br-vlan")
-	print(addresses[i]['br_vlan'])
+	print(addresses[i]['br_vlan_'])
 	print("br-vxlan")
-	print(addresses[i]['br_vxlan'])
+	print(addresses[i]['br_vxlan_'])
 	print("br-swift")
-	print(addresses[i]['br_swift'])
+	print(addresses[i]['br_swift_'])
 	print("")
 
 for i in addresses:
@@ -33,32 +33,32 @@ print("Replacing IP Addressess")
 
 for i in addresses:
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_mgmt",addresses[i]['br_mgmt'])
+        line = line.replace("br_mgmt_",addresses[i]['br_mgmt_'])
         print line,
     else:
     	print
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_storage",addresses[i]['br_storage'])
+        line = line.replace("br_storage_",addresses[i]['br_storage_'])
         print line,
     else:
     	print
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_storageprod",addresses[i]['br_storageprod'])
+        line = line.replace("br_storageprod_",addresses[i]['br_storageprod_'])
         print line,
     else:
     	print
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_vlan",addresses[i]['br_vlan'])
+        line = line.replace("br_vlan_",addresses[i]['br_vlan_'])
         print line,
     else:
     	print
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_vxlan",addresses[i]['br_vxlan'])
+        line = line.replace("br_vxlan_",addresses[i]['br_vxlan_'])
         print line,
     else:
     	print
     for line in fileinput.FileInput(i+"interfaces.txt",inplace=1):
-        line = line.replace("br_swift",addresses[i]['br_swift'])
+        line = line.replace("br_swift_",addresses[i]['br_swift_'])
         print line,
     else:
     	print

@@ -49,7 +49,7 @@ iface bond0.438 inet manual
 # Container Bridge
 auto br-mgmt
 iface br-mgmt inet static
-address  br_mgmt
+address  br_mgmt_
 netmask 255.255.248.0
 bridge_ports bond0.432
 bridge_stp off
@@ -60,7 +60,7 @@ offload-sg off
 # Storage Bridge
 auto br-storage
 iface br-storage inet static
-address br_storage
+address br_storage_
 netmask 255.255.248.0
 bridge_ports bond0.402
 bridge_stp off
@@ -71,7 +71,7 @@ offload-sg off
 # Storageprod Bridge
 auto br-storageprod
 iface br-storageprod inet static
-address br_storageprod
+address br_storageprod_
 netmask 255.255.248.0
 bridge_ports bond0.434
 bridge_stp off
@@ -80,7 +80,7 @@ bridge_waitport 0
 # VLAN Bridge
 auto br-vlan
 iface br-vlan inet static
-address br_vlan
+address br_vlan_
 netmask 255.255.248.0
 gateway 10.239.96.1
 dns-nameservers 8.8.8.8
@@ -96,7 +96,7 @@ auto dummy0
 # VXLAN Bridge - This is a dummy bridge
 auto br-vxlan
 iface br-vxlan inet static
-address br_vxlan
+address br_vxlan_
 netmask 255.255.248.0
 bridge_ports dummy0.403
 #bridge_stp off
@@ -107,7 +107,7 @@ bridge_ports dummy0.403
 # Swift Replication Bridge
 auto br-swift
 iface br-swift inet static
-address br_swift
+address br_swift_
 netmask 255.255.248.0
 bridge_ports bond0.438
 bridge_stp off

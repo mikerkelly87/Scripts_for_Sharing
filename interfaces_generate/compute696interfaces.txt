@@ -71,7 +71,7 @@ offload-sg off
 # Storageprod Bridge
 auto br-storageprod
 iface br-storageprod inet static
-address 10.239.58.30prod
+address 10.239.113.35
 netmask 255.255.248.0
 bridge_ports bond0.434
 bridge_stp off
