@@ -5,7 +5,7 @@ Steps:
 
 1) Copy an interfaces file from an existing node to use as the template.
 Place this file in the same directory as the `replace_interfaces.py` script and name it `interfaces.txt`
-When you clone this repo there is an existing `interfaces.txt` file, you will want to replace this with one from an existing node.
+When you clone this repo there is an existing `interfaces.txt` file, you will want to replace this with one from an existing node from your environment.
 
 2) Replace the actual IP addresses in the `interfaces.txt` file with the name of the interface but with an underscore instead of a hypen. The variable with the underscore must also end with an underscore. 
 Ex:  
