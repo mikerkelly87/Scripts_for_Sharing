@@ -27,7 +27,7 @@ offload-sg off
 `br_vxlan_:`  
 `br_swift_:`  
 
-4) Edit the `addresses.yml` file using the existing nodes as an example (but replace them with the info for the nodes you are adding. Be sure the interface names use the underscore naming scheme as described in steps 2 and 3).
+4) Edit the `addresses.yml` file using the existing nodes in the file as examples (but replace them with the info for the nodes you are adding. Be sure the interface names use the underscore naming scheme as described in steps 2 and 3).
 
 5) Run the `replace_interfaces.py` script. This will create a `<node name>interfaces.txt` file for every node you added to the `addresses.yml` file.
 You can doublecheck to make sure your IP addresses were correctly added to these files with:  
