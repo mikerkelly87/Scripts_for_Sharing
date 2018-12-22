@@ -14,12 +14,12 @@ iface br-host inet static
 address br_host_
 
 3) Edit the interface-list.yml file with the names of the bridges you need (this should match the interface names you edit in addresses.yml). These names should also use and end with an underscore. Ex:
-br_mgmt_:
-br_storage_:
-br_storageprod_:
-br_vlan_:
-br_vxlan_:
-br_swift_:
+br_mgmt_:  
+br_storage_:  
+br_storageprod_:  
+br_vlan_:  
+br_vxlan_:  
+br_swift_:  
 
 4) Edit the addresses.yml file using the existing nodes as an example (but replace them with the info for the nodes you are adding. Be sure the interface names use the underscore naming scheme as described in steps 2 and 3).
 
