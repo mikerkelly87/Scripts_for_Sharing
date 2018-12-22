@@ -1,5 +1,9 @@
 #!/usr/local/bin/python
 
+######################
+# Author: Mike Kelly #
+######################
+
 import yaml
 from shutil import copyfile
 import fileinput
