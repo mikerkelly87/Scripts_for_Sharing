@@ -14,7 +14,6 @@ iface br-host inet static
 address br_host_
 
 3) Edit the interface-list.yml file with the names of the bridges you need (this should match the interface names you edit in addresses.yml). These names should also use and end with an underscore. Ex:
----
 br_mgmt_:
 br_storage_:
 br_storageprod_:
