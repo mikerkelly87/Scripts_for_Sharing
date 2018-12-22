@@ -9,15 +9,15 @@ When you clone this repo there is an existing `interfaces.txt` file, you will wa
 
 2) Replace the actual IP addresses in the `interfaces.txt` file with the name of the interface but with an underscore instead of a hypen. The variable with the underscore must also end with an underscore. 
 Ex:  
-`auto br-host`  
-`iface br-host inet static`  
-`address br_host_`  
-`netmask 255.255.248.0`  
-`bridge_ports bond0.432`  
-`bridge_stp off`  
-`bridge_waitport 0`  
-`bridge_fd 0`  
-`offload-sg off`  
+auto br-host  
+iface br-host inet static  
+address `br_host_`  
+netmask 255.255.248.0  
+bridge_ports bond0.432  
+bridge_stp off  
+bridge_waitport 0  
+bridge_fd 0  
+offload-sg off  
 
 3) Edit the `interface-list.yml` file with the names of the bridges you need (this should match the interface names you edit in `addresses.yml`). These names should also use and end with an underscore. Ex:  
 `br_mgmt_:`  
