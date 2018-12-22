@@ -7,11 +7,11 @@ Steps:
 Place this file in the same directory as the replace_interfaces.py script and name it 'interfaces.txt'
 When you clone this repo there is an existing interfaces.txt file, you will want to replace this with one from an existing node.
 
-2) Replace the actual IP addresses in the interfaces.txt file with the name of the interface but with an underscore instead of a hypen.  
+2) Replace the actual IP addresses in the interfaces.txt file with the name of the interface but with an underscore instead of a hypen. The variable with the underscore must also end with an underscore. 
 Ex:  
-auto br-host  
-iface br-host inet static  
-address br_host  
+auto br-host
+iface br-host inet static
+address br_host_
 
 3) Edit the addresses.yml file using the existing nodes as an example (but replace them with the info for the nodes you are adding. Be sure the interface names use the underscore naming scheme as described in step 2).
 
