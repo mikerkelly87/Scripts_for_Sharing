@@ -17,7 +17,6 @@ print("List of Interfaces")
 
 # print interfaces (for testing)
 for i in interfaces:
-#	print("List of Interfaces")
 	print(i)
 
 print("")
