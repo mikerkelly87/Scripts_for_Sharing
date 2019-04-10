@@ -4,21 +4,24 @@ Weights
 Greenfields
 
 
-Difficulty  Type 
-17          RPC-R Custom (Storage)  
-15          RPC-R  
-12          RPC-O Custom (Storage)  
-10          RPC-O  
-8           New Ceph Cluster  
+Difficulty | Type  
+17 | RPC-R Custom (Storage)  
+15 | RPC-R  
+12 | RPC-O Custom (Storage)  
+10 | RPC-O  
+8 | New Ceph Cluster  
 
 
-Difficulty  Type  
-6           Swift Addition  
-5           RPC-O Custom (ie: CAS Cobbler) Compute Addition  
-4           RPC-O Compute Addition  
-3           RPC-O Ceph Node Addition  
-2           RPC-R Ceph Node Addition  
-1           RPC-R Compute Addition  
+Node Additions
+
+
+Difficulty | Type  
+6 | Swift Addition  
+5 | RPC-O Custom (ie: CAS Cobbler) Compute Addition  
+4 | RPC-O Compute Addition  
+3 | RPC-O Ceph Node Addition  
+2 | RPC-R Ceph Node Addition  
+1 | RPC-R Compute Addition  
 
 
 Some Examples:
