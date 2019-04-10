@@ -5,6 +5,7 @@ builds = ["1) RPC-R Greenfield Custom (Storage)", "2) RPC-R Greenfield", "3) RPC
 "4) RPC-O Greenfield", "5) New Ceph Cluster", "6) Swift Node Addition", "7) RPC-O Custom (ie: CAS Cobbler) Compute Addition", \
 "8) RPC-O Compute Addition", "9) RPC-O Ceph Node Addition", "10) RPC-R Ceph Node Addition", "11) RPC-R Compute Addition"]
 
+# Define weights for builds
 weights = [17, 15, 12, 10, 8, 6, 5, 4, 3, 2, 1]
 
 # Calculate the base weight of a build
@@ -51,5 +52,5 @@ def main():
 	weight = weights[build_input-1]
 	calculate()
 
-
+# Run the main function
 main()
