@@ -829,7 +829,7 @@ verify_ubuntu_version() {
     ARCHITECTURE=$(uname -p)
     CODENAME=$(lsb_release -c | awk '{print $NF}')
 
-    if [[ ( ${VERSION} == 14.04 || ${VERSION} == 12.04 || ${VERSION} == 16.04  ) && \
+    if [[ ( ${VERSION} == 14.04 || ${VERSION} == 12.04 || ${VERSION} == 16.04 || ${VERSION} == 18.04  ) && \
         ${ARCHITECTURE} == x86_64 ]]; then
         echo -e "${PASS}\tUbuntu Version (${VERSION}; $(uname -r))"
     else
