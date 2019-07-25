@@ -96,8 +96,8 @@ get_version() {
         VENDOR=$(dmidecode --type 3 | awk '/Manufacturer/ {print $2}')
     fi
 
-    if [[ ${VERSION} != 12.04 && ${VERSION} != 16.04 &&  ${VERSION} != 16.04 ]]; then
-        # Exit on anything other than Ubuntu 12.04, 14.04 and 16.04
+    if [[ ${VERSION} != 12.04 && ${VERSION} != 14.04 && ${VERSION} != 16.04 && ${VERSION} != 18.04 ]]; then
+        # Exit on anything other than Ubuntu 12.04, 14.04, 16.04, and 18.04
         echo -e "${FAIL}\tUbuntu version (${VERSION})"
         adc_status FAIL ${ADC_FP_STATUS} "Ubuntu version incorrect"
         exit 1
@@ -449,9 +449,10 @@ install_tools() {
     fi
 
     # crashkernel memory allocation defaults to 384M.
+    # This default changed to 512M in 18.04
     # Modify value to 1G for any servers with at least 128M of RAM
     (cp /etc/default/grub.d/kdump-tools.cfg ${BACKUP_DIR}/kdump-tools.cfg.bak \
-            && sed -i 's@384@1024@g' /etc/default/grub.d/kdump-tools.cfg \
+            && sed -i 's@512@1024@g' /etc/default/grub.d/kdump-tools.cfg \
             && update-grub &> /dev/null \
             && echo -e "${FIXED}\tConfigure crash kernel memory allocation to 1024M") \
             || echo -e "${FAIL}\tConfigure crash kernel memory allocation to 1024M"
