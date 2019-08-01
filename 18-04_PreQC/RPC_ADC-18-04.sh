@@ -468,12 +468,12 @@ install_openmanage() {
         [[ $(grep "linux.dell.com" ${SOURCES_FILE}) ]]; then
         echo -e "${INFORM}\tDell OMSA repository already installed"
     else
-        echo "deb http://linux.dell.com/repo/community/ubuntu ${CODENAME} openmanage/840" \
+        echo "deb http://linux.dell.com/repo/community/openmanage/930/${CODENAME} ${CODENAME} main" \
             >> "${SOURCES_FILE}" && echo -e "${PASS}\tInstalled Dell OMSA repository"
     fi
 
     # Verify the OMSA repository keys
-    (gpg --keyserver pool.sks-keyservers.net --recv-key 1285491434D8786F \
+    (gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-key 1285491434D8786F \
         &>/dev/null && echo -e "${PASS}\tDownloading GPG key") \
         || echo -e "${FAIL}\tDownloading GPG key"
 
@@ -2400,3 +2400,4 @@ else
     usage
     exit 1
 fi
+
