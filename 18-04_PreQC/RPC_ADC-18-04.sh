@@ -96,8 +96,8 @@ get_version() {
         VENDOR=$(dmidecode --type 3 | awk '/Manufacturer/ {print $2}')
     fi
 
-    if [[ ${VERSION} != 12.04 && ${VERSION} != 14.04 && ${VERSION} != 16.04 && ${VERSION} != 18.04 ]]; then
-        # Exit on anything other than Ubuntu 12.04, 14.04, 16.04, and 18.04
+    if [[ ${VERSION} != 18.04 ]]; then
+        # Exit on anything other than Ubuntu 18.04
         echo -e "${FAIL}\tUbuntu version (${VERSION})"
         adc_status FAIL ${ADC_FP_STATUS} "Ubuntu version incorrect"
         exit 1
