@@ -1014,7 +1014,7 @@ verify_filesystem() {
             echo -e "${INFORM}\t'${SWAP_PARTITION}' is a stand-alone partition \
 which does not use LVM"
         fi
-    elif [[ $(free -g | awk '/^Swap:/ {print $2}') -eq 0 ]]; then
+    elif [[ $(free -h | awk '/^Swap:/ {print $2}') -eq 0 ]]; then
             echo -e "${FAIL}\tNo active swap partition currently enabled"
     else
         echo -e "${PASS}\tVerify SWAP ('${SWAP_PARTITION}')"
