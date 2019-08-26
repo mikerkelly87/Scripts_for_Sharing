@@ -1,1 +1,1 @@
-Just some scripts that other people might find helpful
+Just some scripts I've written over the years
